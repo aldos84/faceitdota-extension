@@ -1,0 +1,35 @@
+{
+  "manifest_version": 3,
+  "name": "FaceItDota",
+  "version": "1.1",
+  "description": "Shown MMR and favorite positions in matchroom.",
+  "author": "Dodo",
+  "homepage_url": "https://faceit.deadsec.net",
+  "icons": {
+    "48": "icons/faceitdota-48.png",
+    "96": "icons/faceitdota-96.png"
+  },
+  "permissions": [
+    "storage"
+  ],
+  "host_permissions": [
+    "https://www.faceit.com/*",
+    "https://faceit.deadsec.net/*"
+  ],
+  "content_scripts": [
+    {
+      "all_frames": true,
+      "js": [
+        "faceitdota.js"
+      ],
+      "matches": [
+        "*://www.faceit.com/*"
+      ],
+      "run_at": "document_start"
+    }
+  ],
+  "options_ui": {
+    "page": "settings.html",
+    "open_in_tab": false
+  }
+}
